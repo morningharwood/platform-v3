@@ -12,7 +12,6 @@ import { init } from './routes/config';
 import { LoginRouteModule } from './login/module';
 import { AdminRouteModule } from './admin/module';
 
-
 @NgModule({
   imports: [
     BrowserModule,
@@ -28,12 +27,11 @@ import { AdminRouteModule } from './admin/module';
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'login',
-      },
-    ]),
+        redirectTo: 'login'
+      }
+    ])
   ],
-  declarations: [ AppComponent ],
-  bootstrap: [ AppComponent ],
+  declarations: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

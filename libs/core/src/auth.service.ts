@@ -2,35 +2,29 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 import { AngularFireAuth } from 'angularfire2/auth';
-import {
-  AngularFirestore,
-  AngularFirestoreDocument,
-} from 'angularfire2/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
 import { User } from './user.interface';
 import { switchMap } from 'rxjs/operators';
-
 
 @Injectable()
 export class AuthService {
   public user$: Observable<User>;
 
-  constructor(private afAuth: AngularFireAuth,
-              private afs: AngularFirestore,
-              private router: Router) {
+  constructor(private afAuth: AngularFireAuth, private afs: AngularFirestore, private router: Router) {
     this.onInit();
   }
 
   public onInit(): void {
     this.user$ = this.afAuth.authState.pipe(
-      switchMap((user) => {
+      switchMap(user => {
         if (user) {
-          return this.afs.doc<User>(`users/${user.uid}`)
-                     .valueChanges();
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
         } else {
           return Observable.of(null);
         }
-      }));
+      })
+    );
   }
 
   public googleLogin() {
@@ -49,8 +43,8 @@ export class AuthService {
       uid: user.uid,
       email: user.email,
       roles: {
-        subscriber: true,
-      },
+        subscriber: true
+      }
     };
 
     return userRef.set(data, { merge: true });
@@ -60,31 +54,24 @@ export class AuthService {
     if (!user) {
       return false;
     }
-    return allowedRoles.some(role => user.roles[ role ]);
+    return allowedRoles.some(role => user.roles[role]);
   }
 
   // TODO Lock down Auth from serverside.
   // https://angularfirebase.com/lessons/role-based-authorization-with-firestore-nosql-and-angular-5/
   // @ 5:00mins
   public canRead(user: User): boolean {
-    const allowed = [
-      'admin',
-      'editor',
-      'subscriber',
-    ];
+    const allowed = ['admin', 'editor', 'subscriber'];
     return this.checkAuthorization(user, allowed);
   }
 
   public canEdit(user: User): boolean {
-    const allowed = [
-      'admin',
-      'editor',
-    ];
+    const allowed = ['admin', 'editor'];
     return this.checkAuthorization(user, allowed);
   }
 
   public canDelete(user: User): boolean {
-    const allowed = [ 'admin' ];
+    const allowed = ['admin'];
     return this.checkAuthorization(user, allowed);
   }
 }

@@ -85,6 +85,12 @@
       "appRoot": ""
     },
     {
+      "name": "easing",
+      "root": "libs/easing/src",
+      "test": "../../../test.js",
+      "appRoot": ""
+    },
+    {
       "name": "event-type",
       "root": "libs/event-type/src",
       "test": "../../../test.js",

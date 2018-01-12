@@ -3,9 +3,6 @@ import { ModuleWithProviders } from '@angular/core';
 import { AdminContainerMasterComponent } from './container/master/component';
 import { AdminGuard } from '@workspace/core/src/admin.guard';
 
-
-
-
 export const config: Routes = [
   {
     path: 'admin',
@@ -13,10 +10,10 @@ export const config: Routes = [
     children: [
       {
         path: '',
-        component: AdminContainerMasterComponent,
-      },
-    ],
-  },
+        component: AdminContainerMasterComponent
+      }
+    ]
+  }
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(config);

@@ -1,12 +1,6 @@
-import {
-  RouterModule,
-  Routes,
-} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-import {
-  LoginContainerMasterComponent,
-} from './container/master/component';
-
+import { LoginContainerMasterComponent } from './container/master/component';
 
 export const config: Routes = [
   {
@@ -14,10 +8,10 @@ export const config: Routes = [
     children: [
       {
         path: '',
-        component: LoginContainerMasterComponent,
-      },
-    ],
-  },
+        component: LoginContainerMasterComponent
+      }
+    ]
+  }
 ];
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(config);
