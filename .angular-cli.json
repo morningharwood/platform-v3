@@ -79,33 +79,20 @@
       }
     },
     {
-      "name": "portfolio",
-      "root": "apps/portfolio/src",
-      "outDir": "dist/apps/portfolio",
-      "assets": [
-        "assets",
-        "favicon.ico"
-      ],
-      "index": "index.html",
-      "main": "main.ts",
-      "polyfills": "polyfills.ts",
+      "name": "core",
+      "root": "libs/core/src",
       "test": "../../../test.js",
-      "tsconfig": "tsconfig.app.json",
-      "testTsconfig": "../../../tsconfig.spec.json",
-      "prefix": "app",
-      "styles": [
-        "styles.css"
-      ],
-      "scripts": [],
-      "environmentSource": "environments/environment.ts",
-      "environments": {
-        "dev": "environments/environment.ts",
-        "prod": "environments/environment.prod.ts"
-      }
+      "appRoot": ""
     },
     {
       "name": "event-type",
       "root": "libs/event-type/src",
+      "test": "../../../test.js",
+      "appRoot": ""
+    },
+    {
+      "name": "firebase-portfolio",
+      "root": "libs/firebase-portfolio/src",
       "test": "../../../test.js",
       "appRoot": ""
     }
