@@ -6,6 +6,8 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { CoreModule } from '@workspace/core/';
+
 
 @NgModule({
   imports: [
@@ -13,9 +15,11 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
     NxModule.forRoot(),
     AngularFireModule.initializeApp(environment.firebase, 'portfolio'),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    CoreModule.forRoot(),
   ],
-  declarations: [AppComponent],
-  bootstrap: [AppComponent]
+  declarations: [ AppComponent ],
+  bootstrap: [ AppComponent ],
 })
-export class AppModule {}
+export class AppModule {
+}

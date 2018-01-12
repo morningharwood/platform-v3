@@ -5,8 +5,13 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '@workspace/core';
-import { tap, map, take } from 'rxjs/operators';
+import { AuthService } from './auth.service';
+import {
+  tap,
+  map,
+  take,
+} from 'rxjs/operators';
+
 
 @Injectable()
 export class AdminGuard implements CanActivate {
@@ -20,10 +25,10 @@ export class AdminGuard implements CanActivate {
       take(1),
       map(user => !!(user && user.roles.admin)),
       tap(isAdmin => {
-        if(!isAdmin) {
-          console.error('No Authorization')
+        if (!isAdmin) {
+          console.error('No Authorization');
         }
-      })
-    )
+      }),
+    );
   }
 }

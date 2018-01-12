@@ -7,7 +7,7 @@ import {
   AngularFirestoreDocument,
 } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
-import { User } from '@workspace/core';
+import { User } from './user.interface';
 import { switchMap } from 'rxjs/operators';
 
 
@@ -69,7 +69,8 @@ export class AuthService {
     return allowedRoles.some(role => user.roles[ role ]);
   }
 
-  // TODO https://angularfirebase.com/lessons/role-based-authorization-with-firestore-nosql-and-angular-5/
+  // TODO Lock down Auth from serverside.
+  // https://angularfirebase.com/lessons/role-based-authorization-with-firestore-nosql-and-angular-5/
   // @ 5:00mins
   public canRead(user: User): boolean {
     const allowed = [

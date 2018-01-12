@@ -1,4 +1,4 @@
-import { Roles } from '@workspace/core/src/roles.interface';
+import { Roles } from './roles.interface';
 
 
 export interface User {
