@@ -14,7 +14,7 @@ export enum EventType {
   // Selection events.
   // https =//www.w3.org/TR/selection-api/
   SELECTIONCHANGE = 'selectionchange',
-  SELECTSTART = 'selectstart',  // IE, Safari, Chrome
+  SELECTSTART = 'selectstart', // IE, Safari, Chrome
 
   // Wheel events
   // http =//www.w3.org/TR/DOM-Level-3-Events/#events-wheelevents
@@ -28,7 +28,7 @@ export enum EventType {
   // Focus
   BLUR = 'blur',
   FOCUS = 'focus',
-  DEACTIVATE = 'deactivate',  // IE only
+  DEACTIVATE = 'deactivate', // IE only
   FOCUSIN = 'focusin',
   FOCUSOUT = 'focusout',
 
@@ -38,7 +38,7 @@ export enum EventType {
   SELECT = 'select',
   SUBMIT = 'submit',
   INPUT = 'input',
-  PROPERTYCHANGE = 'propertychange',  // IE only
+  PROPERTYCHANGE = 'propertychange', // IE only
 
   // Drag and drop
   DRAGSTART = 'dragstart',
