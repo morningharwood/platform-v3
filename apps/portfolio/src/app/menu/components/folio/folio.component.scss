@@ -30,6 +30,13 @@
   }
 }
 
+button {
+  background: none;
+  border: none;
+  padding: ms(-1) 0;
+  width: auto;
+}
+
 h6 {
   @extend %sans-family;
   color: $red-mh;

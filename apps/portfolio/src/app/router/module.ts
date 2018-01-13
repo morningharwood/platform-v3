@@ -7,6 +7,8 @@ import { MenuModule } from '../menu/module';
 import { ProfileModule } from '../profile/module';
 import { LabModule } from '../lab/module';
 import { WorkModule } from '../work/module';
+import { LoginRouteModule } from '../login/module';
+import { AdminRouteModule } from '../admin/module';
 
 
 @NgModule({
@@ -15,6 +17,8 @@ import { WorkModule } from '../work/module';
     ProfileModule,
     LabModule,
     WorkModule,
+    AdminRouteModule,
+    LoginRouteModule,
   ],
 })
 export class ApplicationRoutes {

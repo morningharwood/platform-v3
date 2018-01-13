@@ -11,8 +11,7 @@ import { RouterModule } from '@angular/router';
 import {
   config,
 } from './router/config';
-import { LoginRouteModule } from './login/module';
-import { AdminRouteModule } from './admin/module';
+
 import { MhPipesModule } from './pipe/module';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
@@ -30,8 +29,6 @@ import { ApplicationRoutes } from './router/module';
     BrowserModule,
     NxModule.forRoot(),
     ApplicationRoutes,
-    AdminRouteModule,
-    LoginRouteModule,
     AngularFireModule.initializeApp(environment.firebase, 'portfolio'),
     AngularFirestoreModule,
     AngularFireAuthModule,

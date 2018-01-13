@@ -1,5 +1,8 @@
+import { FirebaseAppConfig } from 'angularfire2';
+
+
 export class FirebasePortfolio {
-  public static get config() {
+  public static config(): FirebaseAppConfig {
     return {
       apiKey: 'AIzaSyDMNHtmgsu2dv9MPmUA_EOrt7vS00PW12M',
       authDomain: 'mh-client.firebaseapp.com',

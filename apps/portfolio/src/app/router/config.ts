@@ -1,6 +1,4 @@
-
 import { Routes } from '@angular/router';
-
 
 
 export const config: Routes = [
@@ -8,6 +6,10 @@ export const config: Routes = [
     path: '',
     pathMatch: 'full',
     redirectTo: 'menu',
+  },
+  {
+    path: 'admin',
+    loadChildren: './admin/module#AdminRouteModule',
   },
   // {
   //   path: '**',
