@@ -1,0 +1,106 @@
+@import '../../../../assets/css/mixins';
+@import '../../../../assets/css/variables';
+
+
+
+%dotted-border {
+  @include border(bottom, 1px, dotted, $default-text);
+}
+
+:host {
+  @include position(fixed, ms(0), null, null, ms(0));
+  @include size(auto, auto);
+
+  background-size: auto 50%;
+  font-family: $sans-default-family;
+  font-size: 14px;
+  font-weight: $bold;
+  z-index: $layer-2;
+
+  @include bp(4) {
+    left: ms(3);
+    top: ms(3);
+  }
+}
+
+:host::before {
+  @include position(absolute, -(ms(2)), null, null, -(ms(0)));
+  @include size(3px, ms(4));
+
+  background-color: $red-mh;
+  content: '';
+
+  @include bp(4) {
+    @include hide();
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:visited {
+    color: $default-text;
+  }
+}
+
+.scroll-through {
+  color: $red-mh;
+  font-weight: bold;
+}
+
+a:hover .scroll-through {
+  @extend %dotted-border;
+}
+
+.highlight-all:hover {
+  @extend %dotted-border;
+
+  color: $red-mh;
+}
+
+.digital-to-physical {
+  .digital {
+    @include show(inline);
+  }
+
+  .physical {
+    @include hide();
+  }
+}
+
+.highlight-all:hover.digital-to-physical {
+  .digital {
+    @include hide();
+  }
+
+  .physical {
+    @include show(inline);
+  }
+}
+
+dt {
+  @include accessible-hide();
+}
+
+dd {
+  @include position(relative);
+  @include space(p, 0 0 0 ms(-1));
+
+  font-size: ms(-3, $thread: minor-second);
+  font-weight: 400;
+  line-height: 2;
+
+  @include bp(4) {
+    @include space(p, 0 0 0 ms(2));
+  }
+}
+
+dd::before {
+  @include position(absolute, null, null, null, 0);
+
+  @include bp(4) {
+    content: '\2014';
+    top: 2px;
+  }
+}
+

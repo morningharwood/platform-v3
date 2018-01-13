@@ -1,0 +1,25 @@
+@import '../../../../assets/css/mixins';
+@import '../../../../assets/css/variables';
+
+:host {
+  @include position(absolute, null, 0, 9px);
+  @include size(percentage(1/1), null, null, null, ms(14, $thread: aug));
+  @include space(m, 0 0 0 auto);
+
+  display: flex;
+  z-index: $layer-2;
+
+  @include bp(4) {
+
+    bottom: 114px;
+  }
+}
+
+nav {
+  @include space(p, 0 0 ms(2) ms(2));
+  @include size(percentage(1/1));
+
+  @include bp(4) {
+    padding-bottom: 0;
+  }
+}

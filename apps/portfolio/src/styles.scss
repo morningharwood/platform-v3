@@ -1,0 +1,17 @@
+@import 'assets/css/mixins';
+@import 'assets/css/reset';
+@import 'assets/css/global';
+
+.ie {
+  // put styles in here.
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}

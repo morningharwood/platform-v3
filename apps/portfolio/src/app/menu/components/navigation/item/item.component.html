@@ -1,0 +1,9 @@
+<!-- audioContext -->
+<a (click)="go(data.link)"
+   mhAudioContext
+   [frequency]="(100 - (index * 20))">
+  <span [@animate]="enterState">{{data.name | capitalize}}</span>
+  <!-- TODO(mharwood) Make this a pure pipe. -->
+  <i>0{{index}}</i>
+</a>
+<!--TODO refactor to button and use HostListener-->

@@ -1,0 +1,20 @@
+@import '../../../../assets/css/mixins';
+@import '../../../../assets/css/variables';
+
+:host {
+  @include position(fixed, null, 0, 0, 0, $layer-2);
+  @include size(percentage(1/1));
+  @include space(p, 0 0 0 0);
+
+  @include bp(4) {
+    @include size(null, percentage(1/1), null, null, percentage(1/1));
+    @include space(p, 0 0 0 ms(3) 0);
+    display: flex;
+  }
+}
+
+.full-bleed-fixed {
+  @include position(fixed, 0, 0, 0, 0, 0);
+  @include size(percentage(1/1), percentage(1/1), null, null, percentage(1/1));
+  display: block;
+}

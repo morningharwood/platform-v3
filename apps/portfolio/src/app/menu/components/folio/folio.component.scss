@@ -1,0 +1,40 @@
+@import '../../../../assets/css/mixins';
+@import '../../../../assets/css/variables';
+
+%sans-family {
+  font-family: $sans-default-family;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+:host {
+  @include hide();
+  @include position(fixed, null, null, null, ms(2), $layer-2);
+
+  color: $default-text;
+
+  @include bp(4) {
+    @include position(null, auto, null, 0, ms(3));
+    @include show(block);
+
+    transform: rotate(-90deg);
+    transform-origin: 0 0;
+  }
+
+  &::before {
+    @include position(absolute, -6px, null, null, -24px);
+    @include size(ms(-3), ms(1));
+
+    background: $red-mh;
+    content: '';
+  }
+}
+
+h6 {
+  @extend %sans-family;
+  color: $red-mh;
+}
+
+p {
+  @extend %sans-family;
+}

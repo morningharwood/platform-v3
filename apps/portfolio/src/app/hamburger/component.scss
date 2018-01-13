@@ -1,0 +1,71 @@
+@import '../../assets/css/mixins';
+@import '../../assets/css/variables';
+
+$bar-width: 100%;
+$bar-height: 3px;
+$bar-spacing: 6px;
+$bg-on: rgba(0, 0, 0, 1);
+$bg-off: rgba(0, 0, 0, 0);
+
+:host {
+  @include position(fixed, null, null, null, 0, $primary);
+  @include size(4.9%, $bar-height + $bar-spacing*2);
+  @include space(p, ms(0) ms(-1));
+  cursor: pointer;
+  margin: auto;
+}
+
+.bar,
+.bar::after,
+.bar::before {
+  @include size($bar-width, $bar-height);
+}
+
+$offset-color: .35;
+
+.bar {
+  background: $bg-on;
+  position: relative;
+  transform: translateY($bar-spacing);
+
+  &.animate {
+    background: $bg-off;
+  }
+}
+
+
+:host:hover .bar {
+  background: transparentize($bg-on, $offset-color);
+}
+
+:host:hover .bar::after {
+  top: ms(-1);
+  transition: top 100ms ease-out;
+  background: transparentize($bg-on, $offset-color);
+}
+
+:host:hover .bar::before {
+  bottom: ms(-1);
+  transition: bottom 100ms ease-out;
+  background: transparentize($bg-on, $offset-color);
+}
+
+.bar::before {
+  background: $bg-on;
+  bottom: $bar-spacing;
+  content: '';
+  left: 0;
+  position: absolute;
+  transition: bottom 100ms ease-in;
+}
+
+.bar::after {
+  background: $bg-on;
+  content: '';
+  left: 0;
+  position: absolute;
+  top: $bar-spacing;
+  transition: top 100ms ease-in;
+}
+
+

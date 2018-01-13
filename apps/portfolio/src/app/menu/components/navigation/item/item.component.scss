@@ -1,0 +1,65 @@
+@import '../../../../../assets/css/mixins';
+@import '../../../../../assets/css/variables';
+
+:host {
+  display: block;
+  overflow: hidden;
+}
+// TODO refactor to button and use HostListener
+a {
+  cursor: pointer;
+  display: flex;
+  font-size: ms(2);
+  line-height: 1.6;
+  position: relative;
+  text-decoration: none;
+
+  @include bp(4) {
+    font-size: ms(3);
+    line-height: 1.4;
+  }
+
+  &:hover {
+    color: $red-mh;
+  }
+}
+
+span {
+  @include bp(4) {
+    @include space(p, 0 ms(0) 0 0);
+    @include size(percentage(1/1));
+
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+  }
+}
+
+a::before {
+  @include position(absolute, null, ms(3), 0, 0);
+  @include size(percentage(1/1), 1px);
+
+  background: $default-text;
+  content: '';
+
+  @include bp(4) {
+    @include size(percentage(1/1), 2px);
+  }
+}
+
+i {
+  @include hide();
+
+  font-style: normal;
+  font-weight: $bold;
+  position: absolute;
+
+  @include bp(4) {
+    $index-offset: 4px;
+
+    @include position(absolute, null, $index-offset, $index-offset null);
+    @include show(inline-block);
+
+    font-size: ms(-4);
+  }
+}
