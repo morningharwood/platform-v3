@@ -28,6 +28,6 @@ export class FolioComponent {
   };
 
   public go() {
-    this.store.dispatch(new Go({ path: [ 'admin' ] }));
+    this.store.dispatch(new Go({ path: [ 'login' ] }));
   }
 }

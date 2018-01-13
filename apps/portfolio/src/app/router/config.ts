@@ -11,6 +11,10 @@ export const config: Routes = [
     path: 'admin',
     loadChildren: './admin/module#AdminRouteModule',
   },
+  {
+    path: 'login',
+    loadChildren: './login/module#LoginRouteModule',
+  },
   // {
   //   path: '**',
   //   component: ErrorMasterComponent,

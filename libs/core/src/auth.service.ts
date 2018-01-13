@@ -32,6 +32,10 @@ export class AuthService {
     return this.oAuthLogin(provider);
   }
 
+  public googleLogout() {
+    return this.afAuth.auth.signOut();
+  }
+
   private async oAuthLogin(provider) {
     const credentials = await this.afAuth.auth.signInWithPopup(provider);
     return this.updateUserData(credentials.user);
