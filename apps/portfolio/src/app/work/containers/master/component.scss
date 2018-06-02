@@ -1,0 +1,118 @@
+@import '../../../../assets/css/variables';
+@import '../../../../assets/css/mixins';
+@import '../../../../assets/css/extends';
+
+$white-work: $white-off;
+$overlay-open: rgba($black-mh, 50%);
+$black-work: $dark-black-mh;
+$space-42: ms(2);
+$space-72: ms(7, $thread: aug);
+$size-62: ms(3, $thread: aug);
+$space-19: ms(2, $thread: aug);
+$size-12: ms(-1, $thread: minor-second);
+$size-10: ms(-2, $thread: minor-second);
+
+app-works-master {
+  @extend %full-wh;
+
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.work-container {
+  @extend %full-wh;
+
+  background-color: $white-work;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+article {
+  @extend %full-wh;
+
+  display: flex;
+  flex: 1 0 percentage(1/1);
+  flex-direction: column;
+  padding: 0;
+  position: relative;
+
+  @include bp(4) {
+    padding: 0 $space-42 $space-42;
+  }
+}
+
+article:first-child {
+  @include bp(4) {
+    padding: $space-42;
+  }
+}
+
+header {
+  @extend %full-wh;
+  flex-direction: column;
+
+  @include bp(4) {
+    @include center-flex();
+  }
+}
+
+.action-button {
+  background: $red-mh;
+  border: solid 1px darken($red-mh, 10%);
+  color: $white-off;
+  display: flex;
+  font-weight: normal;
+  justify-content: center;
+  margin: $space-19 auto;
+  padding: 16px 0;
+  text-align: center;
+  text-decoration: none;
+  width: 182px;
+}
+
+footer {
+  @include hide();
+
+  @include bp(4) {
+    @include show(flex);
+    flex-direction: row;
+    padding: 0 $space-72 $space-72;
+  }
+}
+
+.overview {
+  font-family: $sans-default-family;
+  font-size: 13px;
+  line-height: 1.6;
+  width: percentage(1/1);
+
+  @include bp(4) {
+    padding: 0 $size-62;
+    width: percentage(1/3);
+  }
+
+  @include bp(5) {
+    padding: 0 $space-72;
+  }
+
+  h4 {
+    color: $black-work;
+    font-size: $size-10;
+    font-weight: 800;
+    letter-spacing: 2px;
+    padding: 0 0 $size-12;
+    text-transform: uppercase;
+  }
+
+  h5 {
+    font-size: $size-10;
+  }
+
+  p {
+    font-size: $size-12;
+    line-height: 2.1;
+  }
+}

@@ -1,0 +1,121 @@
+@import '../../../../assets/css/variables';
+@import '../../../../assets/css/mixins';
+@import '../../../../assets/css/extends';
+
+$text: $default-text;
+$host-width: 100%;
+$article-header-bg: $white-off;
+
+.wild {
+  color: red;
+}
+
+app-article-header {
+  margin: 0 auto;
+  text-align: center;
+  width: $host-width;
+
+  @include bp(4) {
+    @include center-flex();
+  }
+
+  h3,
+  h4,
+  h6,
+  p {
+    font-size: 14px;
+    font-weight: 300;
+    text-align: center;
+  }
+
+  h4 {
+    padding: 0 36px;
+
+    @include bp(4) {
+      padding: 0;
+    }
+  }
+
+  .block {
+    @extend %full-abs-bleed;
+    pointer-events: none;
+    text-align: center;
+    white-space: nowrap;
+
+    &::before {
+      @include bp(4) {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        margin-right: -0.25em;
+        vertical-align: middle;
+      }
+    }
+
+    h6 {
+      color: rgba($default-text, .1);
+      display: inline-block;
+      font-family: $display-font-family;
+      font-size: 65vh;
+      vertical-align: middle;
+      width: 100%;
+      user-select: none;
+    }
+  }
+
+  .categories {
+    $line-width: 40px;
+    $line-top: 0;
+
+    display: inline-block;
+    position: relative;
+
+    h3 {
+      color: #222;
+      display: inline-block;
+      font-family: sans-serif;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      padding: 0 12px;
+      position: relative;
+      text-transform: uppercase;
+      top: -13px;
+
+      .dark-filter & {
+        color: $dark-copy;
+      }
+
+      .light-filter & {
+        color: $light-copy;
+      }
+
+      .sepia-filter & {
+        color: $sepia-copy;
+      }
+    }
+  }
+
+  h4 {
+    font-size: 19px;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 16px 52px 0;
+  }
+
+  .title-wrapper {
+    display: block;
+    padding: 16px 32px 0;
+
+    h2 {
+      font-size: 36px;
+      font-weight: normal;
+      text-align: center;
+
+      @include bp(4) {
+        font-size: 72px;
+      }
+    }
+  }
+}

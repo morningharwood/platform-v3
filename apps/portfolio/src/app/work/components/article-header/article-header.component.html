@@ -1,0 +1,26 @@
+<div class="flex-child">
+  <div class="block">
+    <h6 class="centered">
+      {{index}}
+    </h6>
+  </div>
+  <div class="categories">
+    <h3>
+      <!--{{post.category}}-->
+    </h3>
+  </div>
+  <!--TODO (feature) add tags-->
+
+  <div class="title-wrapper">
+    <h2 contenteditable="true"
+        appArticleEdit
+        [post]="post"
+        [pointer]="['header', 'title']">
+      {{post.header.title}}
+    </h2>
+  </div>
+
+  <h4>
+    {{ post.header.description}}
+  </h4>
+</div>

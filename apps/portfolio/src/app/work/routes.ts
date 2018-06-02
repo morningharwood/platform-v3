@@ -10,6 +10,9 @@ export const config: Routes = [
       {
         path: '',
         component: MasterWorkContainerComponent,
+        // resolve: {
+        //   work: WorkDataResolve
+        // }
       },
       {
         path: ':slug',

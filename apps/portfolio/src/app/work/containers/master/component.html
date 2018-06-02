@@ -1,4 +1,29 @@
-<h1>Work Page</h1>
+<article
+      *ngFor="let work of works; trackBy: trackByWorkId; let idx = index">
+  <div class="work-container">
+    <header class="article-header-wrapper">
+      <app-article-header [post]="work"
+                          [index]="idx"></app-article-header>
+      <!--<a class="action-button" [routerLink]="[idx]">Learn More</a>-->
+    </header>
+    <!--<footer>-->
+      <!--<div class="overview" *ngFor="let overview of work.footer">-->
+        <!--<h4>{{overview.title}}</h4>-->
+        <!--<h5>{{overview.subtitle}}</h5>-->
+        <!--<p>{{overview.description}}</p>-->
+      <!--</div>-->
+    <!--</footer>-->
+  </div>
+  <!--<app-article-admin-->
+      <!--*ngIf="userObs | async"-->
+      <!--[post]="work">-->
+  <!--</app-article-admin>-->
+</article>
 
-<button (click)="go('menu')">Menu</button>
-<button (click)="go('/work/1234')">Read more</button>
+<!--<div *ngIf="userObs | async as user"-->
+     <!--style="position: fixed; top: 0; left: 0;width: 40px; height: 40px; z-index: 99">-->
+  <!--<h3>logged, {{user.email}}</h3>-->
+  <!--<button (click)="add()">add</button>-->
+<!--</div>-->
+
+
